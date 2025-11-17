@@ -1,0 +1,37 @@
+# Start with an empty list to store movie names
+movies = []
+
+# Function to add a movie to the list
+def add_movie(movie):
+    movies.append(movie)
+    print(f"Added: {movie}")
+
+# Function to remove a movie if it exists in the list
+def remove_movie(movie):
+    if movie in movies:
+        movies.remove(movie)
+        print(f"Removed: {movie}")
+    else:
+        print("Movie not found.")
+
+# Function to show all movies in the library
+def show_movies():
+    print("Movie List:")
+    for m in movies:
+        print(f"- {m}")
+
+# Main loop to keep the system running
+while True:
+    print("\n1. Add Movie\n2. Remove Movie\n3. Show Movies\n4. Exit")
+    choice = input("Choose an option: ")
+
+    if choice == '1':
+        add_movie(input("Movie name: "))
+    elif choice == '2':
+        remove_movie(input("Movie to remove: "))
+    elif choice == '3':
+        show_movies()
+    elif choice == '4':
+        break  # Exit the loop
+    else:
+        print("Invalid choice.")
