@@ -1,0 +1,5 @@
+# Check if the name already exists
+    for user in users:
+        if user["name"].lower() == name.lower():
+            print("Error: A user with this name already exists.")
+            return None
