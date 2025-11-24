@@ -18,6 +18,11 @@ def register_user():
     if not name:
         print("Error: Name cannot be empty.")
         return None
+        # Check if the name already exists
+    for user in users:
+        if user["name"].lower() == name.lower():
+            print("Error: A user with this name already exists.")
+            return None
 
     try:
         age = int(input("Enter age: "))
@@ -142,4 +147,5 @@ def main_menu():
 
 # Run the main menu if this script is executed
 if __name__ == "__main__":
+
     main_menu()
